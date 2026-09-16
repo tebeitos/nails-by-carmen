@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Aviso legal · Nails & Bridal by Carmen">
+  <main class="section legal">
+    <div class="container legal-content">
+      <a class="back" href="/">← Volver al inicio</a>
+      <h1>Aviso legal</h1>
+      <p>
+        En cumplimiento de la normativa vigente, se informa a los usuarios de este sitio web,
+        titularidad de Carmen Valdés, con actividad en Avilés, Asturias, de los siguientes datos
+        identificativos: nombre comercial Nails &amp; Bridal by Carmen, actividad de manicura
+        nupcial, contacto telefónico 984 12 34 56.
+      </p>
+      <p>
+        Este es un texto de sustitución (placeholder) a efectos de maquetación. El contenido legal
+        definitivo deberá ser redactado y revisado por un profesional cualificado antes de la
+        publicación del sitio web.
+      </p>
+      <p>
+        El uso de este sitio web atribuye la condición de usuario e implica la aceptación de las
+        condiciones incluidas en este aviso legal.
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .legal {
+    min-height: 70vh;
+  }
+
+  .legal-content {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .back {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .legal h1 {
+    font-size: 2.4rem;
+  }
+
+  .legal p {
+    font-size: 1rem;
+  }
+</style>

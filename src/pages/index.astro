@@ -1,0 +1,385 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const waLink = 'https://wa.me/34984123456?text=Hola Carmen, me gustaría reservar una cita para mi boda.';
+const igLink = 'https://instagram.com/nailsbycarmen';
+
+const services = [
+  {
+    number: '01',
+    title: 'Manicura nupcial completa',
+    text: 'Uñas y manos pensadas para ese día. Incluye prueba previa obligatoria — porque Carmen no improvisa el día de tu boda.',
+  },
+  {
+    number: '02',
+    title: 'Pack novia + madres',
+    text: 'Para cuando toda la familia quiere estar perfecta. Servicio grupal con cita coordinada.',
+  },
+  {
+    number: '03',
+    title: 'Nail art para invitadas',
+    text: 'Diseños personalizados para las que quieren brillar sin robarle el protagonismo a la novia.',
+  },
+  {
+    number: '04',
+    title: 'Clientas habituales',
+    text: 'Semipermanente y acrílico para las que llevan años en sus manos.',
+  },
+];
+---
+
+<Layout>
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Las uñas que salen en todas las fotos.</h1>
+      <p class="subtitle">Carmen Valdés · Manicura nupcial · Avilés, Asturias</p>
+      <a class="btn btn-lg" href={waLink} target="_blank" rel="noopener noreferrer">
+        Escríbeme por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- 2. LA HISTORIA -->
+  <section class="section story">
+    <div class="container story-content">
+      <h2>Doce años haciendo uñas. Y un día, una novia le mandó foto desde la luna de miel.</h2>
+      <p class="lead">Las uñas seguían perfectas.</p>
+      <p>
+        Desde entonces Carmen se especializa en novias. No porque sea lo más fácil — sino porque
+        es lo que más importa. El día más fotografiado de tu vida merece unas manos a la altura.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. SERVICIOS -->
+  <section class="section services">
+    <div class="container">
+      <h2 class="section-title">Lo que hago</h2>
+      <div class="services-grid">
+        {
+          services.map((s) => (
+            <div class="service">
+              <span class="service-number">{s.number}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FRASE DE CLIENTA -->
+  <section class="quote">
+    <div class="container quote-content">
+      <p class="quote-text">
+        "Carmen me hizo las uñas para la boda. En las fotos de dos años después siguen siendo lo
+        primero que veo."
+      </p>
+      <p class="quote-author">— Clienta real</p>
+    </div>
+  </section>
+
+  <!-- 5. SOBRE CARMEN -->
+  <section class="section about">
+    <div class="container about-grid">
+      <div class="about-photo">
+        <img src="/carmen.jpg" alt="Carmen Valdés, manicurista nupcial en Avilés" />
+      </div>
+      <div class="about-text">
+        <h2>Sobre Carmen</h2>
+        <p>
+          Empecé en un salón del centro de Avilés con dieciocho años. Aprendí de todo — acrílico,
+          semipermanente, nail art — hasta que una novia cambió el rumbo.
+        </p>
+        <p>
+          Ahora trabajo por temporadas. De enero a junio tengo lista de espera. El resto del año
+          atiendo a mis clientas de siempre, las que llevan años poniéndose en mis manos.
+        </p>
+        <p>Trabajo en Avilés y me desplazo por Asturias cuando la ocasión lo merece.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. RESERVAR -->
+  <section class="section booking">
+    <div class="container booking-content">
+      <h2>¿Tu boda es en 2025 o 2026?</h2>
+      <p class="subtitle">Las fechas se llenan rápido. Escríbeme cuanto antes.</p>
+      <a class="btn btn-lg" href={waLink} target="_blank" rel="noopener noreferrer">
+        → Escríbeme por WhatsApp
+      </a>
+      <p class="ig-link">
+        O en Instagram · <a href={igLink} target="_blank" rel="noopener noreferrer">@nailsbycarmen</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 7. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-main">
+        Nails &amp; Bridal by Carmen · Manicura nupcial<br />
+        Avilés · Asturias<br />
+        @nailsbycarmen
+      </p>
+      <p class="footer-legal">
+        <a href="/aviso-legal">/aviso-legal</a> · <a href="/privacidad">/privacidad</a> · © 2026
+        Carmen Valdés
+      </p>
+    </div>
+  </footer>
+
+  <WhatsAppButton />
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/hero.jpg') center center / cover no-repeat, var(--text);
+    color: #f7f3ee;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(107, 91, 78, 0.35) 0%, rgba(107, 91, 78, 0.65) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    max-width: 16ch;
+    color: #f7f3ee;
+  }
+
+  .hero .subtitle {
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+    opacity: 0.95;
+  }
+
+  /* STORY */
+  .story {
+    background: var(--bg-secondary);
+  }
+
+  .story-content {
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .story h2 {
+    font-size: 2rem;
+  }
+
+  .story .lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+  }
+
+  .story p:not(.lead) {
+    font-size: 1.05rem;
+  }
+
+  /* SERVICES */
+  .services {
+    background: var(--bg-primary);
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--accent);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .service p {
+    font-size: 1rem;
+  }
+
+  /* QUOTE */
+  .quote {
+    background: var(--accent);
+    padding: 5rem 0;
+  }
+
+  .quote-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #f7f3ee;
+    line-height: 1.4;
+  }
+
+  .quote-author {
+    margin-top: 1.5rem;
+    color: #f7f3ee;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--bg-secondary);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .about-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 4px;
+    background: var(--text);
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .about-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* BOOKING */
+  .booking-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .booking h2 {
+    font-size: 2.2rem;
+  }
+
+  .booking .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .ig-link {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .ig-link a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--text);
+    color: var(--bg-primary);
+    padding: 3rem 0 2rem;
+    text-align: center;
+  }
+
+  .footer-main {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .footer-legal {
+    margin-top: 1.5rem;
+    font-size: 0.75rem;
+    opacity: 0.75;
+  }
+
+  .footer-legal a {
+    text-decoration: underline;
+  }
+
+  /* RESPONSIVE */
+  @media (min-width: 640px) {
+    .hero h1 {
+      font-size: 3.2rem;
+    }
+
+    .story h2 {
+      font-size: 2.4rem;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    .booking h2 {
+      font-size: 2.6rem;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .hero h1 {
+      font-size: 3.8rem;
+    }
+  }
+</style>
