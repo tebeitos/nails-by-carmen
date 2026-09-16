@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300">
+  <path d="M195,58 Q260,82 325,58" fill="none" stroke="#8A9E7A" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="260" y="158" text-anchor="middle" font-family="'Cormorant Garamond', Garamond, Georgia, 'Times New Roman', serif" font-style="italic" font-weight="500" font-size="78" fill="#F7F3EE">Nails</text>
+  <line x1="140" y1="196" x2="228" y2="196" stroke="#8A9E7A" stroke-width="1.5"/>
+  <rect x="256" y="192" width="8" height="8" transform="rotate(45 260 196)" fill="#8A9E7A"/>
+  <line x1="292" y1="196" x2="380" y2="196" stroke="#8A9E7A" stroke-width="1.5"/>
+  <text x="260" y="238" text-anchor="middle" font-family="'Inter', sans-serif" font-weight="500" font-size="22" letter-spacing="6" fill="#EDE8E0">BY CARMEN</text>
+</svg>
